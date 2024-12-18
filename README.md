@@ -6,7 +6,7 @@ Inspired by everyday life, the game gives you the freedom to make your own choic
 Get ready for an unforgettable journey! Your life – your rules.
 
 
-![Demo gry](https://github.com/Aheniasty/ProjectX/raw/main/menuconcept.gif)
+![Demo gry](https://raw.githubusercontent.com/Aheniasty/ProjectX/refs/heads/main/MenuConcept.gif)
 
 > [!WARNING]
 > The game was created recently, so all gameplay mechanics and concepts are subject to change.
