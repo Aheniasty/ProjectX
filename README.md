@@ -12,11 +12,11 @@ Get ready for an unforgettable journey! Your life – your rules.
 > The game was created recently, so all gameplay mechanics and concepts are subject to change.
 
 ### The main features of the game will include.
-- Expansive Environment: Explore a variety of locations, from cities to wild territories.
-- Realistic Mechanics: Manage finances, develop skills, run businesses, and handle vehicle operations.
-- Choices and Consequences: Every decision influences the course of the game and its ending.
-- Extensive Quest System: Daily and unique challenges that enhance character development and the storyline.
-- Multiplayer and Interactions: Engage with other players through collaboration or competition, and create communities.
+- Expansive Environment - Explore a variety of locations, from cities to wild territories.
+- Realistic Mechanics - Manage finances, develop skills, run businesses, and handle vehicle operations.
+- Choices and Consequences - Every decision influences the course of the game and its ending.
+- Extensive Quest System - Daily and unique challenges that enhance character development and the storyline.
+- Multiplayer and Interactions - Engage with other players through collaboration or competition, and create communities.
 
 
 # Credits
