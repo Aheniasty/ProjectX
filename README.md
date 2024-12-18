@@ -6,7 +6,7 @@ Inspired by everyday life, the game gives you the freedom to make your own choic
 Get ready for an unforgettable journey! Your life – your rules.
 
 
-![Demo gry](https://imgur.com/Cf8IHtl)
+![Demo gry](https://imgur.com/a/demo-UwSuGm3)
 
 > [!WARNING]
 > The game was created recently, so all gameplay mechanics and concepts are subject to change.
