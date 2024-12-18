@@ -6,7 +6,7 @@ Inspired by everyday life, the game gives you the freedom to make your own choic
 Get ready for an unforgettable journey! Your life – your rules.
 
 
-![image](https://imgur.com/Cf8IHtl))
+![gif](https://imgur.com/Cf8IHtl)
 
 > [!WARNING]
 > The game was created recently, so all gameplay mechanics and concepts are subject to change.
