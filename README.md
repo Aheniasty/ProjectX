@@ -6,7 +6,7 @@ Inspired by everyday life, the game gives you the freedom to make your own choic
 Get ready for an unforgettable journey! Your life – your rules.
 
 
-![image]([https://github.com/user-attachments/assets/6191c963-e6da-43e7-9efd-66b3f76b4f7d](https://raw.githubusercontent.com/Aheniasty/ProjectX/refs/heads/main/MenuConcept.gif))
+![image](https://imgur.com/Cf8IHtl))
 
 > [!WARNING]
 > The game was created recently, so all gameplay mechanics and concepts are subject to change.
