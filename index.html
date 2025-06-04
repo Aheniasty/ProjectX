@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="pl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>ProjectX — Roadmapa</title>
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
   <style>
     body {
       margin: 0;
@@ -13,6 +13,34 @@
       background: linear-gradient(135deg, #1a0033, #4b006e);
       color: #fff;
       min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    /* Przyciski nawigacji w prawym górnym rogu */
+    .nav-buttons {
+      position: fixed;
+      top: 10px;
+      right: 20px;
+      display: flex;
+      gap: 12px;
+      z-index: 1000;
+    }
+    .nav-buttons button {
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.3);
+      border-radius: 12px;
+      padding: 8px 16px;
+      font-size: 1rem;
+      color: #eee;
+      cursor: pointer;
+      transition: background-color 0.3s ease, color 0.3s ease;
+      backdrop-filter: blur(8px);
+    }
+    .nav-buttons button:hover,
+    .nav-buttons button.active {
+      background: #c084fc;
+      color: #1a0033;
+      border-color: #c084fc;
     }
 
     h1 {
@@ -124,120 +152,274 @@
       from {opacity: 0; transform: translateY(10px);}
       to {opacity: 1; transform: translateY(0);}
     }
+
+    /* Ukrywanie wszystkich sekcji */
+    .section {
+      display: none;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    /* Pokazywanie aktywnej sekcji */
+    .section.active {
+      display: block;
+      animation: fadeIn 0.8s ease;
+    }
+
+    /* Specjalny styl dla ekranu głównego */
+    #home .main-message {
+      font-size: 1.8rem;
+      text-align: center;
+      margin-top: 150px;
+      color: #c084fc;
+      text-shadow: 0 0 12px #ff8af0;
+    }
   </style>
 </head>
 <body>
 
-<h1>Roadmapa 2025</h1>
+<!-- Nawigacja -->
+<div class="nav-buttons">
+  <button id="btn-home" class="active">Główna</button>
+  <button id="btn-roadmap">Roadmapa</button>
+  <button id="btn-team">Zespół</button>
+  <button id="btn-changelog">Zmiany</button>
+</div>
 
-<div class="timeline">
-<div class="timeline">
-  <!-- Q1 -->
-  <div class="quarter">
-    <h2>Q1 2025</h2>
-    <div class="tasks">
-      <div class="task">
-        <div class="title">✅ Koncepcja i dokumentacja</div>
-        <div class="status done">Zakończone</div>
-        <div class="tooltip">Opis: Pomysł, dokumentacja i ogólny plan działania.</div>
-        <div class="date">Ostatnia aktualizacja: 12 dni temu</div>
+<!-- Ekran główny -->
+<div id="home" class="section active">
+  <h1>ProjectX</h1>
+  <p class="main-message">Ekran główny — już niedługo coś tu będzie!</p>
+</div>
+
+<!-- Roadmapa -->
+<div id="roadmap" class="section">
+  <h1>Roadmapa 2025</h1>
+  <div class="timeline">
+    <!-- Q1 -->
+    <div class="quarter">
+      <h2>Q1 2025</h2>
+      <div class="tasks">
+        <div class="task">
+          <div class="title">✅ Koncepcja i dokumentacja</div>
+          <div class="status done">Zakończone</div>
+          <div class="tooltip">Opis: Pomysł, dokumentacja i ogólny plan działania.</div>
+          <div class="date">Ostatnia aktualizacja: 12 dni temu</div>
+        </div>
       </div>
     </div>
-  </div>
 
-  <!-- Q2 -->
-  <div class="quarter">
-    <h2>Q2 2025</h2>
-    <div class="tasks">
-      <div class="task">
-        <div class="title">🔧 Grafika (GFX)</div>
-        <div class="status inprogress">W trakcie</div>
-        <div class="tooltip">Opis: Modele 3D, tekstury, animacje, VFX.</div>
-        <div class="date">Ostatnia aktualizacja: 1 dzień temu</div>
-      </div>
-      <div class="task">
-        <div class="title">🔧 Dźwięki (SFX / muzyka)</div>
-        <div class="status inprogress">W trakcie</div>
-        <div class="tooltip">Opis: Efekty dźwiękowe i podkład muzyczny.</div>
-        <div class="date">Ostatnia aktualizacja: 1 dzień temu</div>
-      </div>
-      <div class="task">
-        <div class="title">🕐 Skrypty i mechaniki</div>
-        <div class="status inprogress">W trakcie</div>
-        <div class="tooltip">Opis: Programowanie gameplayu, AI, logika gry.</div>
-        <div class="date">Ostatnia aktualizacja: 1 dzień temu</div>
-      </div>
-      <div class="task">
-        <div class="title">🕐 UI / UX</div>
-        <div class="status pending">Oczekuje</div>
-        <div class="tooltip">Opis: Interfejs gracza, dostępność, HUD.</div>
-        <div class="date">Ostatnia aktualizacja: 2 dni temu</div>
-      </div>
-      <div class="task">
-        <div class="title">🔧 Testowanie i debugowanie</div>
-        <div class="status inprogress">W trakcie</div>
-        <div class="tooltip">Opis: Testy techniczne, naprawa błędów.</div>
-        <div class="date">Ostatnia aktualizacja: 3 dni temu</div>
+    <!-- Q2 -->
+    <div class="quarter">
+      <h2>Q2 2025</h2>
+      <div class="tasks">
+        <div class="task">
+          <div class="title">🔧 Grafika (GFX)</div>
+          <div class="status inprogress">W trakcie</div>
+          <div class="tooltip">Opis: Modele 3D, tekstury, animacje, VFX.</div>
+          <div class="date">Ostatnia aktualizacja: 1 dzień temu</div>
+        </div>
+        <div class="task">
+          <div class="title">🔧 Dźwięki (SFX / muzyka)</div>
+          <div class="status inprogress">W trakcie</div>
+          <div class="tooltip">Opis: Efekty dźwiękowe i podkład muzyczny.</div>
+          <div class="date">Ostatnia aktualizacja: 1 dzień temu</div>
+        </div>
+        <div class="task">
+          <div class="title">🕐 Skrypty i mechaniki</div>
+          <div class="status inprogress">W trakcie</div>
+          <div class="tooltip">Opis: Programowanie gameplayu, AI, logika gry.</div>
+          <div class="date">Ostatnia aktualizacja: 1 dzień temu</div>
+        </div>
+        <div class="task">
+          <div class="title">🕐 UI / UX</div>
+          <div class="status pending">Oczekuje</div>
+          <div class="tooltip">Opis: Interfejs gracza, dostępność, HUD.</div>
+          <div class="date">Ostatnia aktualizacja: 2 dni temu</div>
+        </div>
+        <div class="task">
+          <div class="title">🔧 Testowanie i debugowanie</div>
+          <div class="status inprogress">W trakcie</div>
+          <div class="tooltip">Opis: Testy techniczne, naprawa błędów.</div>
+          <div class="date">Ostatnia aktualizacja: 3 dni temu</div>
+        </div>
       </div>
     </div>
-  </div>
 
-  <!-- Q3 -->
-  <div class="quarter">
-    <h2>Q3 2025</h2>
-    <div class="tasks">
-      <div class="task">
-        <div class="title">💬 Społeczność / feedback</div>
-        <div class="status pending">Oczekuje</div>
-        <div class="tooltip">Opis: System feedbacku od graczy, zarządzanie Discordem.</div>
-        <div class="date">Przewidziana aktualizacja: 05.07.2025</div>
-      </div>
-      <div class="task">
-        <div class="title">🌍 Lokalizacja i języki</div>
-        <div class="status pending">Oczekuje</div>
-        <div class="tooltip">Opis: Wsparcie dla języków EN/DE/Inne oraz system tłumaczeń UI.</div>
-        <div class="date">Przewidziana aktualizacja: 10.07.2025</div>
-      </div>
-      <div class="task">
-        <div class="title">🕐 Optymalizacja</div>
-        <div class="status pending">Oczekuje</div>
-        <div class="tooltip">Opis: Wydajność, płynność, zmniejszenie zużycia zasobów.</div>
-        <div class="date">Przewidziana aktualizacja: 14.08.2025</div>
-      </div>
-      <div class="task">
-        <div class="title">🛠 Backend / Multiplayer</div>
-        <div class="status pending">Oczekuje</div>
-        <div class="tooltip">Opis: Logika sieciowa, synchronizacja danych, serwery.</div>
-        <div class="date">Przewidziana aktualizacja: 2.09.2025</div>
-      </div>
-      <div class="task">
-        <div class="title">🔒 Bezpieczeństwo / Antycheat</div>
-        <div class="status pending">Oczekuje</div>
-        <div class="tooltip">Opis: System zabezpieczeń, ochrona przed exploitami i cheaterami.</div>
-        <div class="date">Przewidziana aktualizacja: 15.09.2025</div>
+    <!-- Q3 -->
+    <div class="quarter">
+      <h2>Q3 2025</h2>
+      <div class="tasks">
+        <div class="task">
+          <div class="title">💬 Społeczność / feedback</div>
+          <div class="status pending">Oczekuje</div>
+          <div class="tooltip">Opis: System feedbacku od graczy, zarządzanie Discordem.</div>
+          <div class="date">Przewidziana aktualizacja: 05.07.2025</div>
+        </div>
+        <div class="task">
+          <div class="title">🌍 Lokalizacja i języki</div>
+          <div class="status pending">Oczekuje</div>
+          <div class="tooltip">Opis: Wsparcie dla języków EN/DE/Inne oraz system tłumaczeń UI.</div>
+          <div class="date">Przewidziana aktualizacja: 10.07.2025</div>
+        </div>
+        <div class="task">
+          <div class="title">🕐 Optymalizacja</div>
+          <div class="status pending">Oczekuje</div>
+          <div class="tooltip">Opis: Wydajność, płynność, zmniejszenie zużycia zasobów.</div>
+          <div class="date">Przewidziana aktualizacja: 14.08.2025</div>
+        </div>
+        <div class="task">
+          <div class="title">🛠 Backend / Multiplayer</div>
+          <div class="status pending">Oczekuje</div>
+          <div class="tooltip">Opis: Logika sieciowa, synchronizacja danych, serwery.</div>
+          <div class="date">Przewidziana aktualizacja: 2.09.2025</div>
+        </div>
+        <div class="task">
+          <div class="title">🔒 Bezpieczeństwo / Antycheat</div>
+          <div class="status pending">Oczekuje</div>
+          <div class="tooltip">Opis: System zabezpieczeń, ochrona przed exploitami i cheaterami.</div>
+          <div class="date">Przewidziana aktualizacja: 15.09.2025</div>
+        </div>
       </div>
     </div>
-  </div>
 
-  <!-- Q4 -->
-  <div class="quarter">
-    <h2>Q4 2025</h2>
-    <div class="tasks">
-      <div class="task">
-        <div class="title">📦 Sklep Online</div>
-        <div class="status pending">Oczekuje</div>
-        <div class="tooltip">Opis: System zakupów, zarządzanie zakupami w sklepie.</div>
-        <div class="date">Przewidziana aktualizacja: 11.11.2025</div>
-      </div>
-      <div class="task">
-        <div class="title">📝 Marketing / Publikacja</div>
-        <div class="status pending">Oczekuje</div>
-        <div class="tooltip">Opis: Przygotowanie strony gry, social media, zwiastun.</div>
-        <div class="date">Przewidziana aktualizacja: 19.12.2025</div>
+    <!-- Q4 -->
+    <div class="quarter">
+      <h2>Q4 2025</h2>
+      <div class="tasks">
+        <div class="task">
+          <div class="title">📦 Sklep Online</div>
+          <div class="status pending">Oczekuje</div>
+          <div class="tooltip">Opis: System zakupów, zarządzanie zakupami w sklepie.</div>
+          <div class="date">Przewidziana aktualizacja: 11.11.2025</div>
+        </div>
+        <div class="task">
+          <div class="title">📝 Marketing / Publikacja</div>
+          <div class="status pending">Oczekuje</div>
+          <div class="tooltip">Opis: Przygotowanie strony gry, social media, zwiastun.</div>
+          <div class="date">Przewidziana aktualizacja: 19.12.2025</div>
+        </div>
       </div>
     </div>
   </div>
 </div>
+
+<!-- Zespół -->
+<div id="team" class="section">
+  <h1>Zespół</h1>
+  <div class="timeline">
+    <div class="quarter">
+      <h2>Główne osoby</h2>
+      <div class="tasks">
+        <div class="task">
+          <div class="title">🎮 Michał "NightDev" Kowalski</div>
+          <div class="tooltip">Rola: Lead Developer, gameplay, systemy UI</div>
+          <div class="date">Dołączenie: Styczeń 2025</div>
+        </div>
+        <div class="task">
+          <div class="title">🎨 Anna "ShadeQueen" Nowak</div>
+          <div class="tooltip">Rola: Główna artystka 2D/3D, stylizacja i efekty wizualne</div>
+          <div class="date">Dołączenie: Luty 2025</div>
+        </div>
+        <div class="task">
+          <div class="title">🎧 Tomasz "WaveSynth" Zieliński</div>
+          <div class="tooltip">Rola: Kompozytor i projektant dźwięku</div>
+          <div class="date">Dołączenie: Marzec 2025</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="quarter">
+      <h2>Dodatkowi współpracownicy</h2>
+      <div class="tasks">
+        <div class="task">
+          <div class="title">💻 Paweł "ScriptKid" Rybak</div>
+          <div class="tooltip">Rola: Programista AI i backend</div>
+          <div class="date">Dołączenie: Kwiecień 2025</div>
+        </div>
+        <div class="task">
+          <div class="title">📢 Karolina "HypeFire" Wójcik</div>
+          <div class="tooltip">Rola: Social media, marketing, Discord</div>
+          <div class="date">Dołączenie: Maj 2025</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Historia zmian -->
+<div id="changelog" class="section">
+  <h1>Historia zmian</h1>
+  <div class="timeline">
+    <div class="quarter">
+      <h2>Maj 2025</h2>
+      <div class="tasks">
+        <div class="task">
+          <div class="title">✅ Dodano system inventory</div>
+          <div class="tooltip">Możliwość podnoszenia, wyświetlania i zarządzania przedmiotami w ekwipunku.</div>
+          <div class="date">28.05.2025</div>
+        </div>
+        <div class="task">
+          <div class="title">✅ Wdrożono ShopUI z interaktywnym UI</div>
+          <div class="tooltip">Przebudowano sklep z przypisywaniem prefabów, ikon i cen.</div>
+          <div class="date">26.05.2025</div>
+        </div>
+        <div class="task">
+          <div class="title">✅ Dodano fade UI oraz motyw ciemno-fioletowy</div>
+          <div class="tooltip">Stworzono styl nowoczesny pasujący do klimatu gry gangsterskiej.</div>
+          <div class="date">22.05.2025</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="quarter">
+      <h2>Czerwiec 2025</h2>
+      <div class="tasks">
+        <div class="task">
+          <div class="title">🟡 Dodano ekran główny projektu</div>
+          <div class="tooltip">Wyświetla zapowiedź z komunikatem „Już niedługo...”</div>
+          <div class="date">03.06.2025</div>
+        </div>
+        <div class="task">
+          <div class="title">🟡 Dodano sekcje Zespół i Zmiany z nawigacją</div>
+          <div class="tooltip">Możliwość przeglądania historii i składu zespołu</div>
+          <div class="date">03.06.2025</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  // Obsługa nawigacji między sekcjami
+  const buttons = {
+    home: document.getElementById('btn-home'),
+    roadmap: document.getElementById('btn-roadmap'),
+    team: document.getElementById('btn-team'),
+    changelog: document.getElementById('btn-changelog'),
+  };
+
+  const sections = {
+    home: document.getElementById('home'),
+    roadmap: document.getElementById('roadmap'),
+    team: document.getElementById('team'),
+    changelog: document.getElementById('changelog'),
+  };
+
+  function showSection(name) {
+    // Ukryj wszystkie sekcje
+    Object.values(sections).forEach(sec => sec.classList.remove('active'));
+    // Usuń klasę active z przycisków
+    Object.values(buttons).forEach(btn => btn.classList.remove('active'));
+    // Pokaż wybraną sekcję i zaznacz przycisk
+    sections[name].classList.add('active');
+    buttons[name].classList.add('active');
+  }
+
+  buttons.home.addEventListener('click', () => showSection('home'));
+  buttons.roadmap.addEventListener('click', () => showSection('roadmap'));
+  buttons.team.addEventListener('click', () => showSection('team'));
+  buttons.changelog.addEventListener('click', () => showSection('changelog'));
+</script>
 
 </body>
 </html>
