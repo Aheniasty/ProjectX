@@ -7,8 +7,9 @@
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
   <style>
     body {
+      zoom: 0.70; /* Ustawia zoom na 75% */
       margin: 0;
-      padding: 40px 20px;
+      padding: 60px 40px;
       font-family: 'Segoe UI', sans-serif;
       background: linear-gradient(135deg, #1a0033, #4b006e);
       color: #fff;
@@ -255,6 +256,17 @@
   box-shadow: 0 0 15px rgba(108, 78, 201, 0.8);
 }
 
+.footer {
+  text-align: center;       /* wyśrodkowanie tekstu */
+  padding: 1px 0;          /* trochę przestrzeni w pionie */
+  position: fixed;          /* stopka "przyklejona" do dołu okna */
+  bottom: 0;
+  width: 100%;              /* zajmuje całą szerokość */
+  color: #ccc;              /* jasny tekst */
+  font-size: 14px;
+  z-index: 1000;            /* na wierzchu */
+}
+
     /* Przycisk */
     #betaSignup {
       padding: 10px 20px;
@@ -434,9 +446,24 @@
 
   <div class="intro-card">
     <h2>Witaj w ciemnej strefie!</h2>
-    <p>Rozpocznij podróż przez ciemne ulice, nielegalny handel i dynamiczną akcję. Nasza gra przeniesie Cię do pełnego wyzwań świata, w którym liczy się każda decyzja.</p>
+<p>Rozpocznij podróż przez ciemne ulice, nielegalny handel i dynamiczną akcję. Nasza gra przeniesie Cię do pełnego wyzwań świata, w którym liczy się każda decyzja.</p>
+<p>Chcesz mieć realny wpływ na rozwój ProjectX? Dołącz do betatestów i bądź jedną z pierwszych osób, które przetestują grę oraz pomogą ją ulepszyć!</p>
 <button id="betaSignup" class="feedback-btn"><i class="fas fa-comment-dots"></i> Zgłoś się do Beta Testów</button>
 <div id="betaToast" class="toast">Zostałeś pomyślnie zarejestrowany na beta testy.</div>
+    <p>Witaj w brutalnym świecie czarnego rynku, gdzie jedna zła decyzja może cię kosztować wszystko.
+ProjectX to mroczna symulacja przestępczego imperium, w której wcielasz się w początkującego dilera próbującego wspiąć się na szczyt łańcucha narkotykowego.</p>
+                <div style="text-align: left;">
+    <p>🧬 Zaczynasz od zera – kilka tabletek w plecaku, jeden klient i zero szacunku. Jesteś tylko pionkiem… na razie.</p>
+    <p>💵 Twórz receptury, kombinuj z proporcjami, miksuj chemię i eksperymentuj z nowymi produktami, które rozniosą się po mieście szybciej niż plotki.</p>
+    <p>🚚 Organizuj dostawy, wynajmuj kurierów, korzystaj z kryjówek i przejmuj kolejne dzielnice, ryzykując wszystko dla większego zysku.</p>
+    <p>👮 Przekupuj gliniarzy, szantażuj urzędników i zacieraj ślady, zanim zrobi się zbyt gorąco.</p>
+    <p>👥 Zbuduj ekipę – rekrutuj chemików, ochroniarzy, dealerów i kierowców. Każdy z nich może cię wynieść na szczyt… albo sprzedać za garść dolarów.</p>
+    <p>🏭 Zarządzaj magazynami, laboratoriami i logistyką. Zadbaj o łańcuch dostaw, kontroluj jakość produktu i eliminuj słabe ogniwa.</p>
+    <p>🔫 Rozwijaj swoje imperium, likwiduj konkurencję i bierz udział w brutalnej wojnie o terytorium z innymi gangami. Tu nie ma zasad – tylko przetrwanie.</p>
+    <p>🎯 Twoim celem jest dominacja – ale droga do niej prowadzi przez zdrady, zastraszenia i morze krwi. Czy masz w sobie to, czego potrzeba, by rządzić czarnym rynkiem?</p>
+
+</div>
+
   </div>
 
   <div class="slider">
@@ -459,9 +486,9 @@
       <div class="tasks">
         <div class="task">
           <div class="title">✅ Koncepcja i dokumentacja</div>
-          <div class="status done">Zakończone</div>
+          <div class="status done">Zakończone<span class="tag">RESTRUKTURYZACJA</span></div>
           <div class="tooltip">Opis: Pomysł, dokumentacja i ogólny plan działania.</div>
-          <div class="date">Ostatnia aktualizacja: 12 dni temu</div>
+          <div class="date">Ostatnia aktualizacja: 22 godziny temu</div>
         </div>
       </div>
     </div>
@@ -550,12 +577,27 @@
           <div class="tooltip">Opis: System zakupów, zarządzanie zakupami w sklepie.</div>
           <div class="date">Przewidziana aktualizacja: 11.11.2025</div>
         </div>
+        </div>
+      </div>
+    </div>
+        <!-- Q1 2026-->
+    <div class="quarter">
+      <h2>Q1 2026</h2>
+      <div class="tasks">
+
+      </div>
+    </div>
+            <!-- Q2 2026-->
+    <div class="quarter">
+      <h2>Q2 2026</h2>
+      <div class="tasks">
         <div class="task">
-          <div class="title">📝 Marketing / Publikacja</div>
+          <div class="title">📝 Marketing / Publikacja<span class="tag"> PUBLIKACJI GRY MOŻE ULEC ZMIANIE</span></div>
           <div class="status pending">Oczekuje</div>
           <div class="tooltip">Opis: Przygotowanie strony gry, social media, zwiastun.</div>
-          <div class="date">Przewidziana aktualizacja: 19.12.2025</div>
+          <div class="date">Przewidziana aktualizacja: 19.05.2026</div>
         </div>
+
       </div>
     </div>
   </div>
@@ -694,18 +736,32 @@
 
   setInterval(rotateSlides, 3000);
 
-    const betaButton = document.getElementById("betaSignup");
-    const toast = document.getElementById("betaToast");
+  const betaButton = document.getElementById("betaSignup");
+  const toast = document.getElementById("betaToast");
 
-    betaButton.addEventListener("click", () => {
-      toast.classList.add("show");
-      setTimeout(() => {
-        toast.classList.remove("show");
-      }, 3000);
-    });
+  betaButton.addEventListener("click", () => {
+    toast.classList.add("show");
+    setTimeout(() => {
+      toast.classList.remove("show");
+    }, 3000);
+  });
+
+  // Dodajemy automatyczne odtwarzanie muzyki po załadowaniu strony
+  window.onload = function() {
+    const audio = document.getElementById('bgMusic');
+    if (audio) {
+      audio.play().catch(() => {
+        console.log('Autoplay zablokowany przez przeglądarkę. Potrzebne kliknięcie użytkownika.');
+      });
+    }
+  };
 </script>
 
 
+
+<footer class="footer">
+<p>© 2025 ProjectX. Wszystkie prawa zastrzeżone.</p>
+</footer>
 
 </body>
 </html>
