@@ -15,6 +15,7 @@
       min-height: 100vh;
       overflow-x: hidden;
     }
+    
 
     /* Przyciski nawigacji w prawym górnym rogu */
     .nav-buttons {
@@ -135,6 +136,218 @@
       color: #ccc;
     }
 
+    .intro-card {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 30px;
+  margin: 40px auto 0;
+  border-radius: 18px;
+  max-width: 700px;
+  text-align: center;
+  box-shadow: 0 0 25px rgba(192, 132, 252, 0.3);
+  animation: fadeInGlow 2s ease;
+  backdrop-filter: blur(10px);
+}
+
+.intro-card h2 {
+  font-size: 1.8rem;
+  color: #ffb3ff;
+  margin-bottom: 16px;
+  text-shadow: 0 0 12px #c084fc;
+}
+
+.intro-card p {
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: #e6d0ff;
+  margin-bottom: 20px;
+}
+
+.feedback-btn {
+  background: #c084fc;
+  color: #1a0033;
+  border: none;
+  padding: 12px 22px;
+  font-size: 1rem;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: bold;
+  box-shadow: 0 0 12px #c084fc;
+}
+.feedback-btn:hover {
+  background: #ff8af0;
+  color: #1a0033;
+  box-shadow: 0 0 20px #ff8af0;
+}
+
+@keyframes fadeInGlow {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+    box-shadow: 0 0 0 rgba(192, 132, 252, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    box-shadow: 0 0 25px rgba(192, 132, 252, 0.3);
+  }
+}
+
+    
+/* --- Cząsteczki tło --- */
+.particles-bg {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: radial-gradient(circle, rgba(192,132,252,0.05) 0%, transparent 70%);
+  background-size: 5px 5px;
+  animation: moveBackground 2s linear infinite;
+  z-index: 0;
+}
+
+@keyframes moveBackground {
+  from { background-position: 0 0; }
+  to { background-position: 600px 600px; }
+}
+
+/* --- Neonowy tytuł --- */
+.glow-title {
+  font-size: 3.5rem;
+  text-align: center;
+  color: #e2ccff;
+  text-shadow: 0 0 15px #c084fc, 0 0 40px #a855f7, 0 0 60px #9333ea;
+  z-index: 1;
+  position: relative;
+  margin-top: 20px;
+}
+
+.feedback-btn {
+  background-color: #7c3aed;
+  border: none;
+  color: white;
+  padding: 12px 24px;
+  font-size: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 30px;
+  transition: background-color 0.3s ease;
+}
+.feedback-btn:hover {
+  background-color: #a78bfa;
+}
+
+/* Toast style */
+.toast {
+  visibility: hidden;
+  min-width: 250px;
+  background-color: #6c4ec9;
+  color: #fff;
+  text-align: center;
+  border-radius: 12px;
+  padding: 12px 24px;
+  position: fixed;
+  z-index: 1000;
+  bottom: 30px;
+  right: 30px;
+  font-size: 16px;
+  opacity: 0;
+  transition: opacity 0.5s ease, bottom 0.5s ease;
+  box-shadow: 0 0 15px rgba(108, 78, 201, 0.8);
+}
+
+    /* Przycisk */
+    #betaSignup {
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      background: #6f42c1;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      transition: background 0.3s;
+    }
+    #betaSignup:hover {
+      background: #563d7c;
+    }
+
+    /* Toast */
+    #betaToast {
+      visibility: hidden;
+      min-width: 250px;
+      background-color: rgba(111, 66, 193, 0.95);
+      color: white;
+      text-align: center;
+      border-radius: 8px;
+      padding: 15px 20px;
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      font-size: 16px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.4s ease, transform 0.4s ease;
+      z-index: 1000;
+      pointer-events: none;
+      user-select: none;
+    }
+
+    #betaToast.show {
+      visibility: visible;
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: auto;
+    }
+
+.toast.show {
+  visibility: visible;
+  opacity: 1;
+  bottom: 50px;
+}
+
+
+/* --- Slider --- */
+.slider {
+  margin-top: 40px;
+  position: relative;
+  width: 100%;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  overflow: hidden;
+  height: 50px;
+  z-index: 1;
+}
+
+.slide {
+  display: none;
+  font-size: 1.2rem;
+  color: #f3e8ff;
+  text-shadow: 0 0 8px #c084fc;
+  animation: fadeSlide 1s ease-in-out;
+}
+
+.slide.active {
+  display: block;
+}
+
+@keyframes fadeSlide {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+
+    .tag {
+      display: inline-block;
+      font-size: 0.65rem;
+      background: #ff2600;
+      color: #000;
+      padding: 2px 6px;
+      border-radius: 6px;
+      margin-left: 0.5rem;
+    }
+
     .date {
       margin-top: 10px;
       font-size: 0.8rem;
@@ -159,6 +372,35 @@
       max-width: 1200px;
       margin: 0 auto;
     }
+    .toast {
+  visibility: hidden;
+  min-width: 320px;
+  max-width: 360px;
+  background: rgba(90, 46, 138, 0.95); /* ciemny fiolet z lekką przezroczystością */
+  color: #fff;
+  text-align: center;
+  border-radius: 12px;
+  padding: 18px 28px;
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 16px;
+  box-shadow: 0 8px 20px rgba(90, 46, 138, 0.7);
+  z-index: 10000;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.4s ease, transform 0.4s ease, visibility 0.4s;
+  pointer-events: none; /* żeby nie przeszkadzało w klikaniu */
+}
+
+.toast.show {
+  visibility: visible;
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
     /* Pokazywanie aktywnej sekcji */
     .section.active {
       display: block;
@@ -187,9 +429,25 @@
 
 <!-- Ekran główny -->
 <div id="home" class="section active">
-  <h1>ProjectX</h1>
-  <p class="main-message">Ekran główny — już niedługo coś tu będzie!</p>
+  <div class="particles-bg"></div>
+  <h1 class="glow-title">ProjectX</h1>
+
+  <div class="intro-card">
+    <h2>Witaj w ciemnej strefie!</h2>
+    <p>Rozpocznij podróż przez ciemne ulice, nielegalny handel i dynamiczną akcję. Nasza gra przeniesie Cię do pełnego wyzwań świata, w którym liczy się każda decyzja.</p>
+<button id="betaSignup" class="feedback-btn"><i class="fas fa-comment-dots"></i> Zgłoś się do Beta Testów</button>
+<div id="betaToast" class="toast">Zostałeś pomyślnie zarejestrowany na beta testy.</div>
+  </div>
+
+  <div class="slider">
+    <div class="slide active">💊 Handluj narkotykami i buduj imperium</div>
+    <div class="slide">🧠 Rozwijaj strategie przetrwania i kontakty</div>
+    <div class="slide">🌆 Eksploruj mroczne miasto pełne zagrożeń</div>
+    <div class="slide">🛒 Kupuj, ulepszaj i kontroluj dzielnice</div>
+    
+  </div>
 </div>
+
 
 <!-- Roadmapa -->
 <div id="roadmap" class="section">
@@ -213,25 +471,25 @@
       <h2>Q2 2025</h2>
       <div class="tasks">
         <div class="task">
-          <div class="title">🔧 Grafika (GFX)</div>
+          <div class="title">🔧 Grafika (GFX) <span class="tag">WCZESNY DOSTĘP</span></div>
           <div class="status inprogress">W trakcie</div>
           <div class="tooltip">Opis: Modele 3D, tekstury, animacje, VFX.</div>
           <div class="date">Ostatnia aktualizacja: 1 dzień temu</div>
         </div>
         <div class="task">
-          <div class="title">🔧 Dźwięki (SFX / muzyka)</div>
+          <div class="title">🔧 Dźwięki (SFX / muzyka) <span class="tag">WCZESNY DOSTĘP</span></div>
           <div class="status inprogress">W trakcie</div>
           <div class="tooltip">Opis: Efekty dźwiękowe i podkład muzyczny.</div>
           <div class="date">Ostatnia aktualizacja: 1 dzień temu</div>
         </div>
         <div class="task">
-          <div class="title">🕐 Skrypty i mechaniki</div>
+          <div class="title">🕐 Skrypty i mechaniki</div> 
           <div class="status inprogress">W trakcie</div>
           <div class="tooltip">Opis: Programowanie gameplayu, AI, logika gry.</div>
           <div class="date">Ostatnia aktualizacja: 1 dzień temu</div>
         </div>
         <div class="task">
-          <div class="title">🕐 UI / UX</div>
+          <div class="title">🕐 UI / UX <span class="tag">WCZESNY DOSTĘP</span></div>
           <div class="status pending">Oczekuje</div>
           <div class="tooltip">Opis: Interfejs gracza, dostępność, HUD.</div>
           <div class="date">Ostatnia aktualizacja: 2 dni temu</div>
@@ -308,39 +566,35 @@
   <h1>Zespół</h1>
   <div class="timeline">
     <div class="quarter">
-      <h2>Główne osoby</h2>
+      <h2>Developerzy</h2>
       <div class="tasks">
         <div class="task">
           <div class="title">🎮 Ahen</div>
-          <div class="tooltip">Rola: Lead Developer, gameplay, systemy UI</div>
-          <div class="date">Dołączenie: Styczeń 2024</div>
-        </div>
-        <div class="task">
-          <div class="title">🎨 Ahen</div>
-          <div class="tooltip">Rola: Główny artysta 2D/3D, stylizacja i efekty wizualne</div>
-          <div class="date">Dołączenie: Styczeń 2024</div>
-        </div>
-        <div class="task">
-          <div class="title">🎧 Ahen</div>
-          <div class="tooltip">Rola: Kompozytor i projektant dźwięku</div>
+          <div class="tooltip">Główny założyciel projektu.</div>
           <div class="date">Dołączenie: Styczeń 2024</div>
         </div>
       </div>
     </div>
 
     <div class="quarter">
-      <h2>Dodatkowi współpracownicy</h2>
+      <h2>Artyści GFX</h2>
       <div class="tasks">
-        <div class="task">
-          <div class="title">💻 Brak Informacji.</div>
-          <div class="tooltip">Rola: .</div>
-          <div class="date">Dołączenie: Brak Informacji.</div>
-        </div>
-        <div class="task">
-          <div class="title">📢 Brak Informacji.</div>
-          <div class="tooltip">Rola: .</div>
-          <div class="date">Dołączenie: Brak Informacji.</div>
-        </div>
+
+        
+      </div>
+    </div>
+
+        <div class="quarter">
+      <h2>Artyści SFX</h2>
+      <div class="tasks">
+ 
+      </div>
+    </div>
+
+        <div class="quarter">
+      <h2>Testerzy</h2>
+      <div class="tasks">
+
       </div>
     </div>
   </div>
@@ -374,6 +628,11 @@
     <div class="quarter">
       <h2>Czerwiec 2025</h2>
       <div class="tasks">
+                    <div class="task">
+          <div class="title">🟡 Poprawiono strone internetowa.</div>
+          <div class="tooltip">Poprawiono główny ekran strony internetowej</div>
+          <div class="date">04.06.2025</div>
+        </div>
         <div class="task">
           <div class="title">🟡 Dodano ekran główny projektu</div>
           <div class="tooltip">Wyświetla zapowiedź z komunikatem „Już niedługo...”</div>
@@ -388,6 +647,7 @@
     </div>
   </div>
 </div>
+
 
 <script>
   // Obsługa nawigacji między sekcjami
@@ -415,11 +675,37 @@
     buttons[name].classList.add('active');
   }
 
-  buttons.home.addEventListener('click', () => showSection('home'));
-  buttons.roadmap.addEventListener('click', () => showSection('roadmap'));
-  buttons.team.addEventListener('click', () => showSection('team'));
-  buttons.changelog.addEventListener('click', () => showSection('changelog'));
+  // Nasłuchiwanie przycisków
+  if (buttons.home) buttons.home.addEventListener('click', () => showSection('home'));
+  if (buttons.roadmap) buttons.roadmap.addEventListener('click', () => showSection('roadmap'));
+  if (buttons.team) buttons.team.addEventListener('click', () => showSection('team'));
+  if (buttons.changelog) buttons.changelog.addEventListener('click', () => showSection('changelog'));
+
+  // Slider – automatyczna rotacja co 3 sekundy
+  let currentSlide = 0;
+  const slides = document.querySelectorAll('.slide');
+
+  function rotateSlides() {
+    if (slides.length === 0) return;
+    slides[currentSlide].classList.remove('active');
+    currentSlide = (currentSlide + 1) % slides.length;
+    slides[currentSlide].classList.add('active');
+  }
+
+  setInterval(rotateSlides, 3000);
+
+    const betaButton = document.getElementById("betaSignup");
+    const toast = document.getElementById("betaToast");
+
+    betaButton.addEventListener("click", () => {
+      toast.classList.add("show");
+      setTimeout(() => {
+        toast.classList.remove("show");
+      }, 3000);
+    });
 </script>
+
+
 
 </body>
 </html>
